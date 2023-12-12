@@ -1,4 +1,17 @@
+import time
+
+def Loading():
+    animation = ['Loading.', 'Loading..', 'Loading...', 'Loading....']
+    for i in range(5):
+        for frame in animation:
+            print(frame, end='\r')
+            time.sleep(0.2)
+    print("Program successfully loaded."
+          "\n")
+
 def sff():
+    print('Program "Smallest Factor Finder (SFF)" is initiating')
+    Loading()
     while True:
         n = int(input("Enter Integer >=2: "))
         if n >= 2:
@@ -21,7 +34,9 @@ def sff():
         else:
             print("Invalid Number. Enter a number greater than 2.")
 
-def factor():
+def prime():
+    print('Program "Prime numbers within a range" is initiating')
+    Loading()
     while True:
         start = float(input("Enter a number [start]: "))
         check1 = True
@@ -103,8 +118,9 @@ def step1():
               "\n[2] Smalles Factor Finder (SFF)."
               "\n[3] End The Program.")
         choice = int(input("Enter what type of program to use [1] or [2]: "))
+        print("\n")
         if choice == 1:
-            factor()
+            prime()
 
         elif choice == 2:
             sff()
